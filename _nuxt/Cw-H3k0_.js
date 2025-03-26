@@ -1,1 +1,0 @@
-import{_ as r}from"./Jbv42qXh.js";import{_ as t}from"./CpiYR_6S.js";import{_ as e}from"./CKJumxPj.js";import{c as a,o as _,b as o}from"./X6lLb_1H.js";import"./Cb-gBDs2.js";const u={__name:"portfolio",setup(m){return(c,i)=>(_(),a("div",null,[o(e),o(t,{title:"Portfolio",breadcrumb:"Portfolio"}),o(r,{fullPage:!0})]))}};export{u as default};
