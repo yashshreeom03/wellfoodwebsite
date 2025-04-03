@@ -1,0 +1,24 @@
+body {
+  color: var(--custom-black);
+  background-color: var(--custom-white);
+  font-weight: 400;
+  line-height: 24px !important;
+  font-size: 16px !important;
+  font-family: 'MonaSans', sans-serif ;   
+  overflow-x: hidden;
+}
+
+.container{
+  margin: 0 auto !important;
+}
+
+a{
+  color: var(--custom-black);
+  text-decoration: none;
+}
+
+.swiper  {
+  max-width: 582px;
+}
+
+
