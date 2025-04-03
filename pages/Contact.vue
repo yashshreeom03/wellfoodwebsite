@@ -95,10 +95,15 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="pb-[100px]">
         <div class="container">
-            <div class="w-full h-[450px] border rounded-lg overflow-hidden shadow-lg">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.4278595809411!2d72.87839939279719!3d21.232075843186877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f40edc4bd51%3A0x2b3984fb5b8f1eab!2sShreeomsoft!5e1!3m2!1sen!2sin!4v1743660603200!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="w-full h-[450px] rounded-[20px] overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.4278595809411!2d72.87839939279719!3d21.232075843186877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f40edc4bd51%3A0x2b3984fb5b8f1eab!2sShreeomsoft!5e1!3m2!1sen!2sin!4v1743660603200!5m2!1sen!2sin" 
+                    class="w-full h-full" 
+                    style="border:0;" allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
