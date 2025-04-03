@@ -1,21 +1,49 @@
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
-  devtools: { enabled: true },
+  ssr: true,
 
-  css: [
-    "./assest/css/main.css",
-    "./assest/css/Style.css",
-    "./assest/css/Responsive.css",
-  ],
-
-  modules: ["@nuxtjs/tailwindcss"], // Install Tailwind via Nuxt module
-
-  vite: {
-    plugins: [], // Remove tailwindcss() from here
+  
+  app: {
+    baseURL: '/shreeom_website/',
+    head: {
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/shreeom_website/favicon.ico" }
+      ]
+    }
   },
 
-  // Remove router.base unless you're using a subdirectory
-  // router: {
-  //   base: "/your-subdirectory/",
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false, 
+    },
+  },
+
+  css: [
+    '@/assets/css/main.css',
+    'swiper/css/navigation',
+    'swiper/css/pagination',
+  ],
+
+  plugins: [
+    { src: "~/plugins/toast.js", mode: "client" },
+    { src: "~/plugins/recaptcha.js", mode: "client" },
+    { src: "~/plugins/email.js" }
+  ],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
+  modules: ['nuxt-swiper'],
+  compatibilityDate: "2025-03-03",
+
+  devtools: {
+    enabled: true,
+  },
+
+ components:true,
+ 
 });
