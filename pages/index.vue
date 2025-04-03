@@ -106,8 +106,6 @@ defineProps({
             </div>
             <div class="w-full lg:w-1/2">
                 <img src="../public/Images/about/about-us-1.png" class="mx-auto" alt="">
-                
-
             </div>
         </div>
       </div>

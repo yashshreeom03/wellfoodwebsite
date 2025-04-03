@@ -5,37 +5,78 @@ import { ref, computed, defineProps } from "vue";
 const props = defineProps({
   showCategories: {
     type: Boolean,
-    default: true,  
+    default: true,
   },
 });
 
-const selectCategory = ref(featuresData[0]?.category || "");
-
-const categories = computed(() => [
-  ...new Set(featuresData.map((item) => item.category)),
-]);
+const selectCategory = ref("UI/UX design");
 
 const filteredData = computed(() => {
   return props.showCategories
     ? featuresData.filter((item) => item.category === selectCategory.value)
     : featuresData;
 });
+
+const setCategory = (category) => {
+  selectCategory.value = category;
+};
+
+const getButtonClass = (category) => {
+  return selectCategory.value === category
+    ? "bg-[#039873] text-white border-[#039873]"
+    : "bg-white border-[#DDDDDD] text-black";
+};
 </script>
 
 <template>
   <div>
     <div v-if="showCategories" class="flex gap-4 justify-center mb-[120px]">
       <button
-        v-for="category in categories"
-        :key="category"
-        @click="selectCategory = category"
+        @click="setCategory('UI/UX design')"
         class="px-4 py-2 rounded-lg transition text-lg font-medium border"
-        :class="{
-          'bg-primarycolor border-[#039873] text-white': selectCategory === category,
-          'bg-white border-[#DDDDDD] text-black': selectCategory !== category,
-        }"
+        :class="getButtonClass('UI/UX design')"
       >
-        {{ category }}
+        UI/UX Design
+      </button>
+
+      <button
+        @click="setCategory('React.js')"
+        class="px-4 py-2 rounded-lg transition text-lg font-medium border"
+        :class="getButtonClass('React.js')"
+      >
+        React.js
+      </button>
+
+      <button
+        @click="setCategory('Web development')"
+        class="px-4 py-2 rounded-lg transition text-lg font-medium border"
+        :class="getButtonClass('Web development')"
+      >
+        Web Development
+      </button>
+
+      <button
+        @click="setCategory('PHP')"
+        class="px-4 py-2 rounded-lg transition text-lg font-medium border"
+        :class="getButtonClass('PHP')"
+      >
+        PHP
+      </button>
+
+      <button
+        @click="setCategory('Laravel')"
+        class="px-4 py-2 rounded-lg transition text-lg font-medium border"
+        :class="getButtonClass('Laravel')"
+      >
+        Laravel
+      </button>
+
+      <button
+        @click="setCategory(' node.js')"
+        class="px-4 py-2 rounded-lg transition text-lg font-medium border"
+        :class="getButtonClass(' node.js')"
+      >
+        node.js
       </button>
     </div>
 

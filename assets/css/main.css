@@ -27,5 +27,11 @@
     @apply bg-white text-primarycolor border border-primarycolor px-8 py-3 text-lg rounded-lg font-semibold hover:bg-opacity-80 transition-all
             hover:btn-shadow;
   }
+  .input-field {
+    @apply w-full p-4 h-14 border mb-[30px] text-lg border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none;
+  }
+  .input-icon {
+    @apply absolute right-[20px] top-[20px] text-[#A7A7A7];
+  }
 
 }
