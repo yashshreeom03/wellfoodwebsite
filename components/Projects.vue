@@ -30,7 +30,7 @@ const getButtonClass = (category) => {
 
 <template>
   <div>
-    <div v-if="showCategories" class="flex gap-4 justify-center mb-[120px]">
+    <div v-if="showCategories" class="flex flex-wrap gap-4 justify-center mb-[120px]">
       <button
         @click="setCategory('UI/UX design')"
         class="px-4 py-2 rounded-lg transition text-lg font-medium border"
@@ -83,7 +83,7 @@ const getButtonClass = (category) => {
     <div
       v-for="(feature, index) in filteredData"
       :key="index"
-      class="sm:p-[50px] p-[30px] mb-20 rounded-[20px] flex flex-col gap-6 lg:flex-row items-center justify-between"
+      class="sm:p-[50px] p-[30px] last:mb-0 mb-20 rounded-[20px] flex flex-col gap-6 lg:flex-row items-center justify-between"
       :style="{ background: feature.bgColor }"
     >
       <template v-if="index % 2 !== 0">
@@ -91,7 +91,7 @@ const getButtonClass = (category) => {
           <img :src="feature.image" alt="Feature Image" class="max-w-full rounded-lg shadow" />
         </div>
         <div class="w-full lg:w-1/2">
-          <h6 class="text-base mb-[25px] font-semibold uppercase" :style="{ color: feature.textColor }">
+          <h6 class="text-base mb-[25px] font-semibold uppercase" :style="{ color: feature.textColor  }">
             Build Visually
           </h6>
           <h2 class="sm:text-[40px] text-[28px] leading-[30px] sm:leading-[50px] font-semibold">
@@ -100,9 +100,9 @@ const getButtonClass = (category) => {
           <p class="sm:text-lg my-[25px]">
             {{ feature.description }}
           </p>
-          <button class="theme-btn mt-4 px-[60px] py-[14px]" :style="{ background: feature.buttonColor, color: feature.buttonTextColor }">
+          <NuxtLink to="/projectsDetail" class="theme-btn Projects-btn inline-block mt-4 px-[60px] py-[14px]" :style="{ background: feature.buttonColor, '--boxShadow': feature.boxShadow }">
             {{ feature.buttonText }}
-          </button>
+          </NuxtLink>
         </div>
       </template>
       <template v-else>
@@ -116,9 +116,9 @@ const getButtonClass = (category) => {
           <p class="sm:text-lg my-[25px]">
             {{ feature.description }}
           </p>
-          <button class="theme-btn mt-4 px-[60px] py-[14px]" :style="{ background: feature.buttonColor, color: feature.buttonTextColor }">
+          <NuxtLink to="/projectsDetail" class="theme-btn Projects-btn inline-block mt-4 px-[60px] py-[14px]" :style="{ background: feature.buttonColor, '--boxShadow': feature.boxShadow }">
             {{ feature.buttonText }}
-          </button>
+          </NuxtLink>
         </div>
         <div class="sm:p-[30px] p-3 rounded-lg" :style="{ background: feature.bgimgColor }">
           <img :src="feature.image" alt="Feature Image" class="max-w-full rounded-lg shadow" />

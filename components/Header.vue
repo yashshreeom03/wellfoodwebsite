@@ -44,9 +44,8 @@ onUnmounted(() => {
                 <!-- Desktop Navigation -->
                 <nav class="hidden lg:flex gap-10">
                     <NuxtLink to="/services" class="text-lg font-medium text-black hover:text-primarycolor transition">Services</NuxtLink>
-
                     <NuxtLink to="/technology" class="text-lg font-medium text-black hover:text-primarycolor transition">Technology</NuxtLink>
-                    <NuxtLink to="/portfolio" class="text-lg font-medium text-black hover:text-primarycolor transition">Portfolio</NuxtLink>
+                    <NuxtLink to="/projects" class="text-lg font-medium text-black hover:text-primarycolor transition">Projects</NuxtLink>
                     <NuxtLink to="/company" class="text-lg font-medium text-black hover:text-primarycolor transition">Company</NuxtLink>
                     <NuxtLink to="/career" class="text-lg font-medium text-black hover:text-primarycolor transition">Career</NuxtLink>
                     <NuxtLink to="/contact" class="lg:hidden">Contact Us</NuxtLink>
@@ -72,7 +71,7 @@ onUnmounted(() => {
 
                     <!-- Mobile Menu Items -->
                     <ul class="flex flex-col">
-                        <li v-for="(item, index) in ['Home', 'Services', 'Technology', 'Portfolio', 'Company', 'Career', 'Contact']" :key="index" class="py-3 border-b border-gray-100 px-4">
+                        <li v-for="(item, index) in ['Services', 'Technology', 'Projects', 'Company', 'Career', 'Contact']" :key="index" class="py-3 border-b border-gray-100 px-4">
                         <NuxtLink :to="'/' + item.toLowerCase()" @click="closeMenu" class="text-lg font-medium hover:text-primarycolor transition">
                             {{ item }}
                         </NuxtLink>

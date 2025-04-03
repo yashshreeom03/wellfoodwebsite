@@ -1,6 +1,7 @@
 <script setup>
 import Header from "~/components/Header.vue";
 import Loader from "@/components/Preloader.vue";
+import cta from "../components/cta.vue";
 import Footer from "~/components/Footer.vue";
 import ScrollToTopButton from "~/components/ScrollToTopButton.vue";
 </script>
@@ -13,6 +14,9 @@ import ScrollToTopButton from "~/components/ScrollToTopButton.vue";
   <main>
     <slot />
   </main>
+  
+  <!-- Cta Section -->
+  <cta />
 
   <!-- Footer Section -->
   <Footer />

@@ -15,7 +15,7 @@
 
 <template>
     <PageBanner title="contact us" breadcrumb="contact us"/>
-    <section class="pt-[50px] pb-[100px]">
+    <section class="py-[100px]">
         <div class="container">
             <div class="grid lg:grid-cols-2 gap-8">
             <div>
@@ -27,8 +27,8 @@
                         <img :src="call" alt="call">
                         <div class="text-center">
                             <h3 class="text-[26px] font-semibold">Phone Number</h3>
-                            <p class="text-[#333333] mt-3">+91 81604 68737</p>
-                            <p class="text-[#333333] mt-3">+91 95867 73991</p>
+                            <a href="tel:+918108483737" class="text-[#333333] mt-3 block">+91 81604 68737</a>
+                            <a href="tel:+919586773991" class="text-[#333333] mt-3 block">+91 95867 73991</a>
                         </div>
                     </div>
     
@@ -38,7 +38,7 @@
                         <img :src="email" alt="email">
                         <div class="text-center">
                             <h3 class="text-[26px] font-semibold">Email Address</h3>
-                            <p class="text-[#333333] mt-3">info@shreemosoft.com</p>
+                            <a href="mailto:info@shreemosoft.com" class="text-[#333333] mt-3 block">info@shreemosoft.com</a>
                         </div>
                     </div>
                 </div>
@@ -49,8 +49,7 @@
                     <div class="max-md:text-center">
                         <h3 class="text-[26px] font-semibold">Address</h3>
                         <p class="text-[#333333] mt-3">
-                            214, Radhika Optima, Yamuna Chowk, nr. Sudama Chowk,  
-                            Mota Varachha, Surat, Gujarat 394101
+                            214, Radhika Optima, Yamuna Chowk, Satellite Rd, Mota Varachha, Surat, Gujarat 394101
                         </p>
                     </div>
                 </div>
@@ -58,7 +57,7 @@
             </div>
     
             <!-- Right Side: Contact Form -->
-            <div class="bg-white rounded-[20px] shadow-[0px_0px_49px_0px_rgba(0,0,0,0.05)] p-[30px]">
+            <div class="bg-white rounded-[20px] shadow-[0px_0px_49px_0px_rgba(0,0,0,0.05)] p-5 sm:p-[30px]">
                 <h3 class="text-[28px] font-semibold mb-[28px]">Fill the form</h3>
     
                 <form @submit.prevent="submitForm">

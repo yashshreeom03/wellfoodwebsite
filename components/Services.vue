@@ -11,7 +11,7 @@ import serviceData from "../data/servicesData";
         :style="{backgroundColor: service.bgColor || 'white', borderColor: service.borderColor, }" >
         <img :src="`/shreeom_website/Images/icons/${service.icon}`" :alt="service.title" class="mb-[26px]" />
         <h3 class="text-xl font-semibold">{{ service.title }}</h3>
-        <p class="text-[#8C8C8D] text-lg mt-4">{{ service.description }}</p>
+        <p class="text-[#616161] text-lg mt-4">{{ service.description }}</p>
       </div>
     </div>
   </div>

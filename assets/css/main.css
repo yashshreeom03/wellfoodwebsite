@@ -20,7 +20,7 @@
   }
 
   .theme-btn {
-    @apply bg-btn-gradient text-white px-8 py-3 text-lg rounded-lg font-semibold hover:bg-opacity-80 transition-all
+    @apply bg-btn-gradient text-white px-8 py-3 text-lg cursor-pointer rounded-lg font-semibold hover:bg-opacity-80 transition-all
             hover:btn-shadow;
   }
   .theme-btn-border {
@@ -32,6 +32,10 @@
   }
   .input-icon {
     @apply absolute right-[20px] top-[20px] text-[#A7A7A7];
+  }
+
+  .Projects-btn:hover {
+    box-shadow: var(--boxShadow);
   }
 
 }

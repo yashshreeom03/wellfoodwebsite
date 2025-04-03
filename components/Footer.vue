@@ -1,5 +1,4 @@
 <script setup>
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faFacebookF, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope ,faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'; 
@@ -34,20 +33,20 @@ const logoWhite = '/shreeom_website/Images/logos/logo-white.png';
                     <h3 class="font-medium text-white mb-6 text-xl">Company</h3>
                     <ul class="space-y-4">
                         <li><NuxtLink to="/" class="text-[#B5B5B5]">About Us </NuxtLink></li>
-                        <li><NuxtLink to="/" class="text-[#B5B5B5]">Services</NuxtLink></li>
-                        <li><NuxtLink to="/" class="text-[#B5B5B5]">Technology</NuxtLink></li>
-                        <li><NuxtLink to="/" class="text-[#B5B5B5]">Portfolio</NuxtLink></li>
-                        <li><NuxtLink to="/" class="text-[#B5B5B5]">Career</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="text-[#B5B5B5]">Services</NuxtLink></li>
+                        <li><NuxtLink to="/Technology" class="text-[#B5B5B5]">Technology</NuxtLink></li>
+                        <li><NuxtLink to="/Projects" class="text-[#B5B5B5]">Portfolio</NuxtLink></li>
+                        <li><NuxtLink to="/Career" class="text-[#B5B5B5]">Career</NuxtLink></li>
                     </ul>
                 </div>
 
                 <div class="xl:col-span-3">
                     <h3 class="font-medium text-white mb-6 text-xl">Services</h3>
                     <ul class="space-y-4">
-                        <li><NuxtLink to="" class="text-[#B5B5B5]">UI/UX Designing</NuxtLink></li>
-                        <li><NuxtLink to="" class="text-[#B5B5B5]">Web Design & Development</NuxtLink></li>
-                        <li><NuxtLink to="" class="text-[#B5B5B5]">Digital Marketing</NuxtLink></li>
-                        <li><NuxtLink to="" class="text-[#B5B5B5]">Maintenance & Support</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="text-[#B5B5B5]">UI/UX Designing</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="text-[#B5B5B5]">Web Design & Development</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="text-[#B5B5B5]">Digital Marketing</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="text-[#B5B5B5]">Maintenance & Support</NuxtLink></li>
                     </ul>
                 </div>
 
@@ -71,7 +70,7 @@ const logoWhite = '/shreeom_website/Images/logos/logo-white.png';
                                 <FontAwesomeIcon :icon="faLocationDot" class="text-white h-[15px] w-[15px]" />
                             </span>
                             <p class="text-[#B5B5B5]"> 
-                                214, Radhika Optima, Yamuna Chowk, nr. Sudama Chowk, Mota Varachha, Surat, Gujarat 394101, IN
+                                214, Radhika Optima, Yamuna Chowk, Satellite Rd, Mota Varachha, Surat, Gujarat 394101
                             </p>
                         </li>
                     </ul>

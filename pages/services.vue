@@ -5,7 +5,7 @@ import PageBanner from "@/components/PageBanner.vue";
 
 <template>
       <PageBanner title="Our Services" breadcrumb="Our Services"/>
-      <section class="pt-[100px] pb-[100px]">
+      <section class="py-[100px]">
         <div class="container">
           <Services />
         </div>
