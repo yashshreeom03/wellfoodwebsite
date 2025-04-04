@@ -1,1 +1,0 @@
-{"version":3,"file":"email.mjs","sources":["../../../../plugins/email.js"],"sourcesContent":["import { defineNuxtPlugin } from '#app'\nimport emailjs from 'emailjs-com'\n\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.provide('emailjs', emailjs)\n})\n"],"names":[],"mappings":";;;;;;;AAGA,MAAA,oDAAe,iBAAiB,CAAC,YAAY;AAC3C,UAAQ,QAAQ,WAAW,OAAO;AACpC,CAAC;"}
