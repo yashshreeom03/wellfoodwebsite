@@ -1,0 +1,50 @@
+body {
+  color: var(--custom-black);
+  background-color: white;
+  font-weight: 400;
+  line-height: 24px !important;
+  font-size: 16px !important;
+  font-family: 'MonaSans', sans-serif ;   
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100%;
+}
+
+.container{
+  margin: 0 auto !important;
+}
+
+a{
+  color: var(--custom-black);
+  text-decoration: none;
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+}
+
+.slick-slider .slick-track,
+.slider-img .slick-list{
+  display: flex;
+  align-items: center;
+}
+
+.slider-nav .slick-current img {
+  transform: scale(1.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-img .slick-list{
+  height: 130px;
+}
