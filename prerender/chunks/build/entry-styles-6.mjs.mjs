@@ -1,0 +1,6 @@
+const Style = "body{background-color:#fff;color:var(--custom-black);font-family:MonaSans,sans-serif;font-size:16px!important;font-weight:400;line-height:24px!important;margin:0;min-height:100%;overflow-x:hidden}.container{margin:0 auto!important}a{color:var(--custom-black);text-decoration:none}@keyframes marquee{0%{transform:translateZ(0)}to{transform:translate3d(-100%,0,0)}}.animate-marquee{animation:marquee 30s linear infinite;display:flex}.slick-slider .slick-track,.slider-img .slick-list{align-items:center;display:flex}.slider-nav .slick-current img{transform:scale(1.3);transition:all .3s ease-in-out}.slider-img .slick-list{height:130px}";
+
+const Responsive = "@media only screen and (min-width:1200px){.container{max-width:1320px!important;padding:0 15px}}@media (max-width:1350px){.container{margin:0 30px}}@media (max-width:1199px){.navbar ul{gap:25px}.brand-logo img{height:50px}}@media (min-width:992px){.contact-us-menu{display:none}}@media (max-width:991px){.container{margin:0 20px}.header-area{padding:20px 0}}@media (max-width:520px){.counter-wrapper,.working-wrapper{grid-template-columns:repeat(1,minmax(0,1fr))}}";
+
+export { Responsive as R, Style as S };
+//# sourceMappingURL=entry-styles-6.mjs.mjs.map
