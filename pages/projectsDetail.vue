@@ -45,16 +45,19 @@ import portfolioData from "@/data/projectsDetail";
             </div>
         </div>
       </section>
-      <section>
+      <section class="pb-[100px]">
             <div class="container">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[29px]">
                     <div 
-                         v-for="(item, index) in portfolioData"
+                        v-for="(item, index) in portfolioData"
                         :key="item.id"
                         class="p-[17px] rounded-lg bg-[#03987308]">
-                        <img :src="item.image"
-                        :alt="item.title" class="w-full rounded-lg" />
+                        <img 
+                        :src="item.image"
+                        :alt="item.title" 
+                        class="w-full rounded-lg transform transition duration-300 ease-in-out hover:scale-105" />
                     </div>
+
                 </div>
             </div>
       </section>

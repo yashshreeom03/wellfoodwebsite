@@ -14,7 +14,7 @@ import techStack from "@/data/techStack";
                         <div
                         v-for="tech in category.technologies"
                         :key="tech.name"
-                        class="border rounded-[15px] h-[148px] w-[203px] p-4 flex flex-col justify-center items-center gap-[15px]"
+                        class="border rounded-[15px] h-[148px] w-[200px] p-4 flex flex-col justify-center items-center gap-[15px]"
                         >
                         <img :src=tech.icon alt="" />
                         <span class="text-lg font-medium">{{ tech.name }}</span>

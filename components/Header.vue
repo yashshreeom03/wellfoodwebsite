@@ -46,7 +46,7 @@ onUnmounted(() => {
                     <NuxtLink to="/services" class="text-lg font-medium text-black hover:text-primarycolor transition">Services</NuxtLink>
                     <NuxtLink to="/technology" class="text-lg font-medium text-black hover:text-primarycolor transition">Technology</NuxtLink>
                     <NuxtLink to="/projects" class="text-lg font-medium text-black hover:text-primarycolor transition">Projects</NuxtLink>
-                    <NuxtLink to="/company" class="text-lg font-medium text-black hover:text-primarycolor transition">Company</NuxtLink>
+                    <NuxtLink to="/" class="text-lg font-medium text-black hover:text-primarycolor transition">Company</NuxtLink>
                     <NuxtLink to="/career" class="text-lg font-medium text-black hover:text-primarycolor transition">Career</NuxtLink>
                     <NuxtLink to="/contact" class="lg:hidden">Contact Us</NuxtLink>
                 </nav>
