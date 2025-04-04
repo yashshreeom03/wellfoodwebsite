@@ -1,7 +1,6 @@
 export default defineNuxtConfig({
   ssr: true,
 
-  
   app: {
     baseURL: '/shreeom_website/',
     head: {
@@ -14,20 +13,22 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      failOnError: false, 
+      failOnError: false,
     },
   },
 
   css: [
     '@/assets/css/main.css',
-    'swiper/css/navigation',
-    'swiper/css/pagination',
+    'slick-carousel/slick/slick.css',
+    'slick-carousel/slick/slick-theme.css'
   ],
 
   plugins: [
     { src: "~/plugins/toast.js", mode: "client" },
     { src: "~/plugins/recaptcha.js", mode: "client" },
-    { src: "~/plugins/email.js" }
+    { src: "~/plugins/email.js" },
+    { src: '~/plugins/jquery.js', mode: 'client' },
+    { src: "~/plugins/slick.js", mode: "client" },
   ],
 
   postcss: {
@@ -44,6 +45,5 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
- components:true,
- 
+  components: true,
 });

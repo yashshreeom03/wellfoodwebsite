@@ -1,107 +1,147 @@
 <template>
-  <div class="flex flex-col items-center max-w-3xl mx-auto relative">
-    <!-- Thumbnails Wrapper (Sliding) -->
-    <div class="w-full overflow-hidden mt-6 relative">
-      <div
-        class="flex gap-6 justify-center h-[130px] mx-auto items-center transition-transform duration-500 ease-in-out"
-        :style="{ transform: `translateX(-${activeIndex * 100}px)` }"
-      >
-        <img
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          :src="testimonial.image"
-          :class="[
-            'rounded-full object-cover cursor-pointer transition-all duration-500',
-            activeIndex === index
-              ? 'w-24 h-24 ring-4 ring-green-500 scale-125 z-10'
-              : 'w-14 h-14 opacity-50'
-          ]"
-          @click="activeIndex = index"
-        />
-      </div>
-    </div>
+  <section id="testimonials-section" class="py-24 bg-white">
+      <div class="container">
+        <SectionHeader class="text-center" largeMargin = true  title="Testimonials" subtitle="Success stories of our clients" />
+        <div class="relative text-center">
+          <!-- Navigation Thumbnails -->
+          <div class="slider-nav slider-img flex max-w-[650px] mx-auto justify-center gap-4 mb-20">
+            <div v-for="(img, index) in images" :key="index">
+              <img
+                :src="img"
+                alt=""
+                class="w-[90px] h-[90px] mx-auto rounded-full object-cover transition duration-300 ease-in-out cursor-pointer"
+              />
+            </div>
+          </div>
 
-    <!-- Testimonial Content (Fixed in Center) -->
-    <div class="relative w-full overflow-hidden mt-6">
-      <div
-        class="flex transition-transform duration-500 ease-in-out"
-        :style="{ transform: `translateX(-${activeIndex * 100}%)` }"
-      >
-        <div
-          v-for="(testimonial, index) in testimonials"
-          :key="index"
-          class="bg-green-100 p-8 rounded-xl text-center shadow-md w-full shrink-0"
-        >
-          <img :src="testimonial.logo" alt="Company Logo" class="w-16 mx-auto mb-4" />
-          <p class="text-lg font-medium text-gray-700">"{{ testimonial.text }}"</p>
-          <h4 class="text-lg font-bold text-gray-800 mt-4">{{ testimonial.name }}</h4>
-          <p class="text-sm text-gray-500">{{ testimonial.role }}</p>
+          <!-- Custom arrows -->
+          <button class="custom-prev absolute max-sm:hidden lg:left-[-20px] left-0 top-[60%] leading-[8px] w-11 h-11 rounded-full bg-white text-black text-2xl opacity-50 hover:opacity-100 transition duration-300"
+          style="box-shadow: 0px 0px 27px 1px #00000014;">
+          <FontAwesomeIcon :icon="faChevronLeft" class="text-sm font-semibold" />
+          </button>
+          <button class="custom-next absolute max-sm:hidden lg:right-[-20px] right-0 top-[60%] leading-[8px] w-11 h-11 rounded-full bg-white text-black text-2xl opacity-50 hover:opacity-100 transition duration-300"
+          style="box-shadow: 0px 0px 27px 1px #00000014;">
+          <FontAwesomeIcon :icon="faChevronRight" class="text-sm" />
+          </button>
+
+          <!-- Main Slider -->
+          <div class="slider-for lg:p-[100px] lg:max-w-[1096px] sm:max-w-[80%] mx-auto p-4 sm:p-[30px] rounded-[40px] bg-[#F0F8EC]">
+            <div v-for="(testimonial, index) in testimonials" :key="index">
+              <img :src="testimonial.image" alt="Company Logo" class="mx-auto mb-4 w-[150px]" />
+              <p class="sm:text-[22px] text-base font-medium text-[#3A701F] my-[50px] sm:leading-relaxed">
+                {{ testimonial.text }}
+              </p>
+              <h6 class="text-lg text-[#3A701F] font-semibold mb-3">{{ testimonial.name }}</h6>
+              <p class="text-sm text-[#3A701F]">{{ testimonial.position }}</p>
+            </div>
+          </div>
+
+
         </div>
       </div>
-    </div>
-
-    <!-- Navigation Arrows -->
-    <button
-      class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-xl"
-      @click="prevTestimonial"
-    >
-      ❮
-    </button>
-    <button
-      class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md text-xl"
-      @click="nextTestimonial"
-    >
-      ❯
-    </button>
-  </div>
+  </section>
 </template>
 
-<script setup>
-import { ref, onMounted, onUnmounted } from "vue";
 
-const testimonials = ref([
-  {
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    logo: "https://placehold.co/100x50?text=Logo",
-    text: "ShreeOm has been a game-changer for our business! Their IT solutions are innovative, reliable, and perfectly tailored to our needs.",
-    name: "Rajesh Patel",
-    role: "CEO of InnovateTech",
-  },
-  {
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    logo: "https://placehold.co/100x50?text=Logo",
-    text: "The team is professional and always ready to help. Highly recommend!",
-    name: "Priya Sharma",
-    role: "CTO of TechWorld",
-  },
-  {
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    logo: "https://placehold.co/100x50?text=Logo",
-    text: "Their support is unmatched, and their expertise is invaluable for any business.",
-    name: "Anil Mehta",
-    role: "Founder of DigitalFlow",
-  },
-]);
+
+<script setup>
+import { ref, onMounted } from "vue";
+import $ from "jquery";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+    import { faChevronLeft , faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 const activeIndex = ref(0);
-let autoSlide;
 
-const nextTestimonial = () => {
-  activeIndex.value = (activeIndex.value + 1) % testimonials.value.length;
-};
+const images = [
+  "/Images/testmonial/reviews-1.png",
+  "/Images/testmonial/reviews-2.png",
+  "/Images/testmonial/reviews-3.png",
+  "/Images/testmonial/reviews-4.png",
+  "/Images/testmonial/reviews-5.png",
+  "/Images/testmonial/reviews-3.png",
+];
 
-const prevTestimonial = () => {
-  activeIndex.value =
-    (activeIndex.value - 1 + testimonials.value.length) % testimonials.value.length;
-};
+const testimonials = [
+  {
+    name: "Jessica",
+    position: "CEO of InnovateTech",
+    rating: 5,
+    text: "ShreeOm has been a game-changer for our business! Their IT solutions are innovative, reliable, and perfectly tailored to our needs. The team is professional and always ready to help. Highly recommend!",
+    image: "Images/logos/testmonial-logo-1.png", 
+  },
+  {
+    name: "Peter",
+    position: "Stockholm, Sweden",
+    rating: 4,
+    text: "ShreeOm has been a game-changer for our business! Their IT solutions are innovative, reliable, and perfectly tailored to our needs",
+    image: "/Images/logos/testmonial-logo-1.png",
+  },
+  {
+    name: "Jessica",
+    position: "Honolulu, HI",
+    rating: 5,
+    text: "Their IT solutions are innovative, reliable, and perfectly tailored to our needs. The team is professional and always ready to help.",
+    image: "/Images/logos/testmonial-logo-1.png",
+  },
+  {
+    name: "Peter",
+    position: "Stockholm, Sweden",
+    rating: 4,
+    text: "Their IT solutions are innovative, reliable, and perfectly tailored to our needs. The team is professional and always ready to help. ShreeOm has been a game-changer for our business!",
+    image: "/Images/logos/testmonial-logo-1.png",
+  },
+  {
+    name: "Jessica",
+    position: "Honolulu, HI",
+    rating: 5,
+    text: "ShreeOm has been a game-changer for our business...",
+    image: "/Images/logos/testmonial-logo-1.png",
+  },
+  {
+    name: "Peter",
+    position: "Stockholm, Sweden",
+    rating: 4,
+    text: "Their IT solutions are innovative and reliable...",
+    image: "/Images/logos/testmonial-logo-1.png",
+  },
+];
 
-// Auto-slide every 5s
+
 onMounted(() => {
-  autoSlide = setInterval(nextTestimonial, 5000);
+  if ($(".slider-for").length > 0) {
+    $(".slider-for").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      asNavFor: ".slider-nav",
+      arrows: false,
+      centerMode: true,
+      centerPadding: "0px",
+    });
+
+    $(".slider-nav").slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: ".slider-for",
+      dots: false,
+      arrows: false,
+      centerMode: true,
+      centerPadding: "0px",
+      focusOnSelect: true,
+      responsive: [
+        { breakpoint: 1024, settings: { slidesToShow: 3 } },
+        { breakpoint: 768, settings: { slidesToShow: 1 } },
+      ],
+    });
+
+    $(".custom-prev").click(() => $(".slider-for").slick("slickPrev"));
+    $(".custom-next").click(() => $(".slider-for").slick("slickNext"));
+
+    $(".slider-for").on("afterChange", function (event, slick, currentSlide) {
+      activeIndex.value = currentSlide;
+    });
+  }
 });
 
-// Clear interval on component unmount
-onUnmounted(() => {
-  clearInterval(autoSlide);
-});
 </script>
+

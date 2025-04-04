@@ -34,3 +34,17 @@ a{
   animation: marquee 30s linear infinite;
 }
 
+.slick-slider .slick-track,
+.slider-img .slick-list{
+  display: flex;
+  align-items: center;
+}
+
+.slider-nav .slick-current img {
+  transform: scale(1.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.slider-img .slick-list{
+  height: 130px;
+}
